@@ -41,13 +41,16 @@ Built from `docs/grilling-output.md` (decisions D1–D17). Checked = done and te
 
 ## API + CLI
 - [x] `POST /runs`, `GET /runs/{id}`, `GET /runs/{id}/classifications`, `GET /listings/{id}`
+- [x] Run modes `new_only` / `backfill`; `GET /runs`, `GET /options`, `GET /listings/{id}/images/{n}`
 - [x] CLI: `run <spec.yaml>`, `catalog refresh`, `benchmark`
 
 ## Quality
 - [x] Benchmark over fixtures: category ≥ 80 %, Yu-Gi-Oh name + set ≥ 80 % (D12)
 - [x] README with Windows setup (venv, Tesseract installer + language packs, PyTorch CUDA)
 
-## Next
+## Next (see HANDOFF.md for details)
+- [ ] Vinted Source Adapter, mirroring how `Vinted-New-Notif` fetches listings
+- [ ] Web UI (`imagetool/web/index.html`): run once / watch new / scan older unseen, result cards
 - [ ] Try real engines on the laptop: Tesseract + CLIP on actual listing photos; label ~50 real listings as a second benchmark
 - [ ] OCR card prints with the print's language pack too (deu/fra/ita), not only the listing's language
 - [ ] Faster fuzzy name matching once the full YGOPRODeck catalog (~13k cards × 5 languages) is loaded — measure first
