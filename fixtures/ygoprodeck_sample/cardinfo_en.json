@@ -1,0 +1,113 @@
+{
+ "data": [
+  {
+   "id": 89631139,
+   "name": "Blue-Eyes White Dragon",
+   "card_sets": [
+    {
+     "set_code": "LOB-EN001",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "set_rarity": "Ultra Rare"
+    },
+    {
+     "set_code": "SDK-001",
+     "set_name": "Starter Deck: Kaiba",
+     "set_rarity": "Ultra Rare"
+    }
+   ]
+  },
+  {
+   "id": 46986414,
+   "name": "Dark Magician",
+   "card_sets": [
+    {
+     "set_code": "LOB-EN005",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "set_rarity": "Ultra Rare"
+    },
+    {
+     "set_code": "SDY-006",
+     "set_name": "Starter Deck: Yugi",
+     "set_rarity": "Ultra Rare"
+    }
+   ]
+  },
+  {
+   "id": 74677422,
+   "name": "Red-Eyes Black Dragon",
+   "card_sets": [
+    {
+     "set_code": "LOB-EN070",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "set_rarity": "Ultra Rare"
+    }
+   ]
+  },
+  {
+   "id": 33396948,
+   "name": "Exodia the Forbidden One",
+   "card_sets": [
+    {
+     "set_code": "LOB-EN124",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "set_rarity": "Ultra Rare"
+    }
+   ]
+  },
+  {
+   "id": 55144522,
+   "name": "Pot of Greed",
+   "card_sets": [
+    {
+     "set_code": "LOB-EN119",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "set_rarity": "Rare"
+    }
+   ]
+  },
+  {
+   "id": 83764718,
+   "name": "Monster Reborn",
+   "card_sets": [
+    {
+     "set_code": "LOB-EN118",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "set_rarity": "Ultra Rare"
+    }
+   ]
+  },
+  {
+   "id": 44095762,
+   "name": "Mirror Force",
+   "card_sets": [
+    {
+     "set_code": "MRD-EN138",
+     "set_name": "Metal Raiders",
+     "set_rarity": "Ultra Rare"
+    }
+   ]
+  },
+  {
+   "id": 14558127,
+   "name": "Ash Blossom & Joyous Spring",
+   "card_sets": [
+    {
+     "set_code": "MACR-EN036",
+     "set_name": "Maximum Crisis",
+     "set_rarity": "Secret Rare"
+    }
+   ]
+  },
+  {
+   "id": 40640057,
+   "name": "Kuriboh",
+   "card_sets": [
+    {
+     "set_code": "MRD-EN071",
+     "set_name": "Metal Raiders",
+     "set_rarity": "Common"
+    }
+   ]
+  }
+ ]
+}

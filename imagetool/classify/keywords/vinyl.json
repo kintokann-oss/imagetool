@@ -1,0 +1,9 @@
+{
+  "any": ["vinyl", "lp", "2lp", "12\"", "7\"", "33 rpm", "45 rpm", "33rpm", "45rpm", "jugoton", "balkanton", "electrecord", "melodiya", "мелодия", "discogs"],
+  "en": ["vinyl record", "record", "records", "lp record", "gatefold", "single 7", "picture disc", "pressing", "first press"],
+  "el": ["βινύλιο", "βινυλιο", "βινύλια", "δίσκος βινυλίου", "δίσκος", "δίσκοι", "δισκος", "lp δίσκος"],
+  "bg": ["грамофонна плоча", "грамофонни плочи", "плоча", "плочи", "винил", "винилова плоча"],
+  "hr": ["gramofonska ploča", "gramofonske ploče", "ploča", "ploče", "vinil", "vinilna ploča"],
+  "ro": ["disc vinil", "disc de vinil", "discuri vinil", "vinil", "placă de vinil", "disc"],
+  "et": ["vinüülplaat", "vinüülplaadid", "vinüül", "heliplaat", "plaat", "plaadid"]
+}

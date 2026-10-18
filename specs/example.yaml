@@ -1,0 +1,7 @@
+# Example Run Spec: all four categories from the mock marketplace.
+source: mock_marketplace
+categories: [vinyl, yugioh_card, board_game, electronics]
+countries: [GR, HR, BG, RO, EE]
+price: {min: 0, max: 1000, currency: EUR}
+max_listings: 100
+min_confidence: 0.6

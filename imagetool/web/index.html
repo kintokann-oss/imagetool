@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>imagetool</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --text: #1d2330; --muted: #6a7282; --border: #dfe3ea;
+    --accent: #2f6fde; --accent-text: #ffffff; --danger: #c43d3d;
+    --vinyl: #6b4fd6; --yugioh_card: #c08a12; --board_game: #2e8b57; --electronics: #2f6fde; --unknown: #8a90a0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --panel: #1b1f27; --text: #e6e9ef; --muted: #98a0b0; --border: #2c323d;
+      --accent: #5b8ff0; --accent-text: #0d1117; --danger: #e06666;
+      --vinyl: #9a85ee; --yugioh_card: #e0ae3c; --board_game: #4fbf85; --electronics: #6d9cf2; --unknown: #8a90a0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--panel); display: flex; gap: 12px; align-items: baseline; }
+  header h1 { font-size: 18px; margin: 0; }
+  header span { color: var(--muted); }
+  main { display: grid; grid-template-columns: 320px 1fr; gap: 16px; padding: 16px 20px; max-width: 1500px; margin: 0 auto; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 12px 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  .panel + .panel { margin-top: 16px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 10px; }
+  label { display: block; font-weight: 600; margin: 10px 0 4px; }
+  input[type=text], input[type=number], select { width: 100%; padding: 7px 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font: inherit; }
+  .row { display: flex; gap: 8px; }
+  .row > * { flex: 1; }
+  .choices label { display: flex; gap: 6px; align-items: center; font-weight: 400; margin: 4px 0; }
+  .mode { display: grid; gap: 6px; }
+  .mode label { font-weight: 400; display: flex; gap: 8px; align-items: flex-start; border: 1px solid var(--border); border-radius: 8px; padding: 8px; margin: 0; cursor: pointer; }
+  .mode label:has(input:checked) { border-color: var(--accent); }
+  .mode small { display: block; color: var(--muted); }
+  .buttons { display: flex; gap: 8px; margin-top: 14px; }
+  button { padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit; cursor: pointer; }
+  button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  button.watching { background: var(--danger); color: #fff; border-color: var(--danger); }
+  button:disabled { opacity: .5; cursor: default; }
+  #status { margin-top: 10px; color: var(--muted); min-height: 1.4em; }
+  #runs { list-style: none; margin: 0; padding: 0; max-height: 280px; overflow: auto; }
+  #runs li { padding: 6px 4px; border-bottom: 1px solid var(--border); cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+  #runs li:hover { background: var(--bg); }
+  #runs li small { color: var(--muted); }
+  .toolbar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .toolbar .chip { border-radius: 999px; padding: 4px 10px; }
+  .toolbar .chip.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  .toolbar .count { margin-left: auto; color: var(--muted); }
+  #results { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .card.fresh { outline: 2px solid var(--accent); }
+  .card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg); display: block; }
+  .card .body { padding: 10px 12px; display: grid; gap: 6px; }
+  .card .title { font-weight: 600; word-break: break-word; }
+  .card .meta { color: var(--muted); font-size: 12px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 600; }
+  .identity { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; font-size: 12px; margin: 0; }
+  .identity dt { color: var(--muted); }
+  .identity dd { margin: 0; word-break: break-word; }
+  .card details { font-size: 12px; }
+  .card details pre { white-space: pre-wrap; background: var(--bg); padding: 6px; border-radius: 6px; margin: 4px 0; }
+  .empty { color: var(--muted); padding: 30px; text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header><h1>imagetool</h1><span>classify used-item listings</span></header>
+<main>
+  <section>
+    <div class="panel">
+      <h2>Run</h2>
+      <form id="form">
+        <label for="source">Source</label>
+        <select id="source"></select>
+
+        <label>Mode</label>
+        <div class="mode">
+          <label><input type="radio" name="mode" value="new_only" checked>
+            <span>New listings only<small>Newest first, stops at the first listing already seen.</small></span></label>
+          <label><input type="radio" name="mode" value="backfill">
+            <span>Scan older unseen<small>Goes past seen listings to classify older ones never classified.</small></span></label>
+        </div>
+
+        <label for="query">Search</label>
+        <input id="query" type="text" placeholder="e.g. yugioh, vinyl, catan">
+
+        <label>Categories</label>
+        <div id="categories" class="choices"></div>
+
+        <label for="countries">Countries</label>
+        <input id="countries" type="text" placeholder="GR, HR, BG, RO, EE (empty = all)">
+
+        <div class="row">
+          <div><label for="priceMin">Min €</label><input id="priceMin" type="number" min="0" step="1"></div>
+          <div><label for="priceMax">Max €</label><input id="priceMax" type="number" min="0" step="1"></div>
+        </div>
+        <div class="row">
+          <div><label for="maxListings">Classify up to</label><input id="maxListings" type="number" min="1" value="50"></div>
+          <div><label for="minConfidence">Min confidence</label><input id="minConfidence" type="number" min="0" max="1" step="0.05" value="0.6"></div>
+        </div>
+        <div class="row">
+          <div><label for="interval">Watch every (s)</label><input id="interval" type="number" min="10" value="60"></div>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="primary" id="runBtn">Run once</button>
+          <button type="button" id="watchBtn" title="Repeat 'New listings only' on a timer">Watch</button>
+        </div>
+        <div id="status"></div>
+      </form>
+    </div>
+    <div class="panel">
+      <h2>Recent runs</h2>
+      <ul id="runs"></ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="toolbar" id="toolbar"></div>
+    <div id="results"><div class="empty">Start a run to see classified listings.</div></div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const state = { categories: [], filter: "all", rows: [], watchTimer: null, busy: false, freshIds: new Set() };
+const LABELS = { vinyl: "Vinyl", yugioh_card: "Yu-Gi-Oh", board_game: "Board game", electronics: "Electronics", unknown: "Unknown" };
+
+function el(tag, attrs = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [key, value] of Object.entries(attrs)) {
+    if (key === "class") node.className = value;
+    else if (key === "style") node.style.cssText = value;
+    else if (key.startsWith("on")) node.addEventListener(key.slice(2), value);
+    else node.setAttribute(key, value);
+  }
+  for (const child of children.flat()) {
+    if (child !== null && child !== undefined) node.append(child instanceof Node ? child : document.createTextNode(String(child)));
+  }
+  return node;
+}
+
+async function api(path, options) {
+  const response = await fetch(path, options);
+  if (!response.ok) throw new Error((await response.json().catch(() => ({}))).detail || response.statusText);
+  return response.json();
+}
+
+function buildSpec(modeOverride) {
+  const spec = {
+    source: $("source").value,
+    mode: modeOverride || document.querySelector("input[name=mode]:checked").value,
+    categories: [...document.querySelectorAll("#categories input:checked")].map((input) => input.value),
+    max_listings: Number($("maxListings").value) || 50,
+    min_confidence: Number($("minConfidence").value),
+  };
+  const query = $("query").value.trim();
+  if (query) spec.query = query;
+  const countries = $("countries").value.split(/[\s,]+/).map((c) => c.trim().toUpperCase()).filter(Boolean);
+  if (countries.length) spec.countries = countries;
+  const min = $("priceMin").value, max = $("priceMax").value;
+  if (min !== "" || max !== "") spec.price = { min: min === "" ? null : Number(min), max: max === "" ? null : Number(max), currency: "EUR" };
+  return spec;
+}
+
+function describe(run) {
+  return `#${run.id} ${run.spec.mode === "new_only" ? "new only" : "scan older"} · ${run.status} · ` +
+    `${run.classified} classified, ${run.unknown} unknown, ${run.skipped_unchanged} skipped, ${run.failed} failed`;
+}
+
+async function waitForRun(id) {
+  for (;;) {
+    const run = await api(`/runs/${id}`);
+    $("status").textContent = describe(run);
+    if (run.status === "done" || run.status === "failed") return run;
+    await new Promise((resolve) => setTimeout(resolve, 800));
+  }
+}
+
+async function startRun(modeOverride, accumulate) {
+  if (state.busy) return;
+  state.busy = true;
+  $("runBtn").disabled = true;
+  try {
+    $("status").textContent = "Starting…";
+    const created = await api("/runs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(buildSpec(modeOverride)) });
+    const run = await waitForRun(created.id);
+    if (run.error) $("status").textContent += ` — ${run.error}`;
+    const rows = await api(`/runs/${run.id}/classifications`);
+    state.freshIds = new Set(accumulate ? rows.map((row) => row.listing_id) : []);
+    state.rows = accumulate ? [...rows.reverse(), ...state.rows.filter((r) => !state.freshIds.has(r.listing_id))] : rows;
+    if (accumulate && rows.length) $("status").textContent += ` — ${rows.length} new`;
+    render();
+    loadRuns();
+  } catch (error) {
+    $("status").textContent = `Error: ${error.message}`;
+  } finally {
+    state.busy = false;
+    $("runBtn").disabled = false;
+  }
+}
+
+function toggleWatch() {
+  if (state.watchTimer) {
+    clearInterval(state.watchTimer);
+    state.watchTimer = null;
+    $("watchBtn").textContent = "Watch";
+    $("watchBtn").classList.remove("watching");
+    return;
+  }
+  const seconds = Math.max(10, Number($("interval").value) || 60);
+  state.rows = [];
+  startRun("new_only", true);
+  state.watchTimer = setInterval(() => startRun("new_only", true), seconds * 1000);
+  $("watchBtn").textContent = `Stop watching (${seconds}s)`;
+  $("watchBtn").classList.add("watching");
+}
+
+function renderToolbar() {
+  const counts = { all: state.rows.length };
+  for (const row of state.rows) counts[row.category] = (counts[row.category] || 0) + 1;
+  const toolbar = $("toolbar");
+  toolbar.replaceChildren(
+    ...["all", ...state.categories, "unknown"].map((key) =>
+      el("button", { class: `chip${state.filter === key ? " active" : ""}`, type: "button", onclick: () => { state.filter = key; render(); } },
+        `${key === "all" ? "All" : LABELS[key] || key} (${counts[key] || 0})`)),
+  );
+}
+
+function card(row) {
+  const colour = `var(--${row.category}, var(--unknown))`;
+  const identity = Object.entries(row.identity || {});
+  const details = el("details", { ontoggle: async (event) => {
+    const target = event.currentTarget;
+    if (!target.open || target.dataset.loaded) return;
+    target.dataset.loaded = "1";
+    const listing = await api(`/listings/${row.listing_id}`);
+    const signals = (listing.classification?.signals || []).map((s) => `${s.kind} → ${s.category} (${s.weight}) ${s.detail}`).join("\n");
+    const ocr = listing.images.map((image) => image.ocr_text).filter(Boolean).join("\n---\n");
+    target.append(el("div", {}, "Signals"), el("pre", {}, signals || "none"), el("div", {}, "OCR text"), el("pre", {}, ocr || "none"));
+  } }, el("summary", {}, "Why?"));
+
+  return el("article", { class: `card${state.freshIds.has(row.listing_id) && state.watchTimer ? " fresh" : ""}` },
+    row.image_count ? el("img", { src: `/listings/${row.listing_id}/images/0`, alt: "", loading: "lazy" }) : null,
+    el("div", { class: "body" },
+      el("div", {},
+        el("span", { class: "badge", style: `background:${colour}` }, LABELS[row.category] || row.category),
+        " ", el("span", { class: "meta" }, `${Math.round(row.confidence * 100)}%`),
+        row.is_bundle ? el("span", { class: "meta" }, ` · bundle${row.estimated_item_count ? " ×" + row.estimated_item_count : ""}`) : null),
+      el("div", { class: "title" }, row.source_url ? el("a", { href: row.source_url, target: "_blank", rel: "noopener noreferrer" }, row.title) : row.title),
+      el("div", { class: "meta" }, [row.price != null ? `${row.price} ${row.currency}` : null, row.country, row.language, row.posted_at].filter(Boolean).join(" · ")),
+      identity.length ? el("dl", { class: "identity" }, identity.flatMap(([name, field]) => [el("dt", {}, name.replaceAll("_", " ")), el("dd", {}, field.value)])) : null,
+      details));
+}
+
+function render() {
+  renderToolbar();
+  const rows = state.filter === "all" ? state.rows : state.rows.filter((row) => row.category === state.filter);
+  $("results").replaceChildren(...(rows.length ? rows.map(card) : [el("div", { class: "empty" }, state.rows.length ? "Nothing in this category." : "No new listings classified.")]));
+}
+
+async function loadRuns() {
+  const runs = await api("/runs?limit=20");
+  $("runs").replaceChildren(...runs.map((run) =>
+    el("li", { onclick: async () => {
+      state.rows = await api(`/runs/${run.id}/classifications`);
+      state.freshIds = new Set();
+      $("status").textContent = describe(run);
+      render();
+    } }, el("span", {}, `#${run.id} ${run.spec.mode === "new_only" ? "new only" : "scan older"}${run.spec.query ? " · " + run.spec.query : ""}`),
+       el("small", {}, `${run.classified + run.unknown} / ${run.fetched}`))));
+}
+
+async function init() {
+  const options = await api("/options");
+  state.categories = options.categories;
+  $("source").replaceChildren(...options.sources.map((source) => el("option", { value: source }, source)));
+  $("categories").replaceChildren(...options.categories.map((category) =>
+    el("label", {}, el("input", { type: "checkbox", value: category, checked: "" }), LABELS[category] || category)));
+  $("form").addEventListener("submit", (event) => { event.preventDefault(); startRun(null, false); });
+  $("watchBtn").addEventListener("click", toggleWatch);
+  renderToolbar();
+  loadRuns();
+}
+init().catch((error) => { $("status").textContent = `Error: ${error.message}`; });
+</script>
+</body>
+</html>

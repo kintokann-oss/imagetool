@@ -1,0 +1,9 @@
+{
+  "any": ["yugioh", "yu gi oh", "yu-gi-oh", "ygo", "konami", "1st edition", "ultra rare", "secret rare", "super rare", "ghost rare", "starlight rare", "blue eyes", "blue-eyes", "dark magician", "exodia", "red-eyes", "red eyes"],
+  "en": ["trading card", "card game", "tcg card", "holo card", "single card"],
+  "el": ["κάρτα yugioh", "κάρτες yugioh", "κάρτα", "κάρτες", "γιουγκιο", "γιου γκι ο"],
+  "bg": ["карта yugioh", "карти yugioh", "карта", "карти", "югио", "ю ги о"],
+  "hr": ["yugioh karta", "yugioh karte", "karta", "karte", "kartica", "kartice"],
+  "ro": ["carte yugioh", "cărți yugioh", "carti yugioh", "carte de joc", "cartonaș", "cartonase"],
+  "et": ["yugioh kaart", "yugioh kaardid", "kaart", "kaardid", "mängukaart"]
+}

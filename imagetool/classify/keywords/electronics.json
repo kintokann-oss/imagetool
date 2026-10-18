@@ -1,0 +1,9 @@
+{
+  "any": ["sony", "samsung", "apple", "iphone", "ipad", "macbook", "xiaomi", "huawei", "nintendo", "playstation", "ps4", "ps5", "xbox", "bose", "jbl", "canon", "nikon", "lenovo", "dell", "asus", "acer", "panasonic", "technics", "pioneer", "philips", "lg", "usb", "hdmi", "bluetooth", "wifi", "android", "gb", "mah"],
+  "en": ["headphones", "earbuds", "laptop", "smartphone", "phone", "tablet", "console", "camera", "speaker", "tv", "monitor", "charger", "turntable", "amplifier", "smartwatch", "router"],
+  "el": ["κινητό", "τηλέφωνο", "ακουστικά", "λάπτοπ", "φορητός υπολογιστής", "κονσόλα", "κάμερα", "ηχείο", "τηλεόραση", "οθόνη", "φορτιστής", "πικάπ", "ενισχυτής"],
+  "bg": ["телефон", "смартфон", "слушалки", "лаптоп", "конзола", "камера", "фотоапарат", "тонколона", "телевизор", "монитор", "зарядно", "грамофон", "усилвател"],
+  "hr": ["mobitel", "telefon", "slušalice", "laptop", "konzola", "kamera", "fotoaparat", "zvučnik", "televizor", "monitor", "punjač", "gramofon", "pojačalo"],
+  "ro": ["telefon", "căști", "casti", "laptop", "consolă", "consola", "cameră foto", "boxă", "boxa", "televizor", "monitor", "încărcător", "pick-up", "amplificator"],
+  "et": ["telefon", "nutitelefon", "kõrvaklapid", "sülearvuti", "mängukonsool", "konsool", "kaamera", "kõlar", "teler", "monitor", "laadija", "plaadimängija", "võimendi"]
+}

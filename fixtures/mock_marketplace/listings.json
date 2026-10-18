@@ -1,0 +1,762 @@
+{
+ "listings": [
+  {
+   "id": "y1",
+   "country": "GR",
+   "title": "Blue Eyes κάρτα 1η έκδοση",
+   "description": "Πωλείται κάρτα σε άριστη κατάσταση.",
+   "price": 120,
+   "currency": "EUR",
+   "posted_at": "2026-10-02",
+   "url": "https://mock-marketplace.example/listing/y1",
+   "images": [
+    {
+     "file": "y1.png",
+     "ocr_text": "BLUE-EYES WH1TE DRAGCN\nLOB-EN001\n1st Edition",
+     "image_scores": {
+      "yugioh_card": 0.82
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Blue-Eyes White Dragon",
+     "set_code": "LOB-EN001",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "edition": "1st edition"
+    }
+   }
+  },
+  {
+   "id": "y2",
+   "country": "BG",
+   "title": "Карта Yu-Gi-Oh Dark Magician",
+   "description": "Продавам карта, отлично състояние.",
+   "price": 35,
+   "currency": "EUR",
+   "posted_at": "2026-10-03",
+   "url": "https://mock-marketplace.example/listing/y2",
+   "images": [
+    {
+     "file": "y2.png",
+     "ocr_text": "Dunkler Magier\nLOB-DE005",
+     "image_scores": {
+      "yugioh_card": 0.8
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Dark Magician",
+     "set_code": "LOB-DE005",
+     "set_name": "Legend of Blue Eyes White Dragon",
+     "print_language": "de"
+    }
+   }
+  },
+  {
+   "id": "y3",
+   "country": "HR",
+   "title": "Yugioh karta Mirror Force",
+   "description": "Prodajem kartu, očuvana.",
+   "price": 25,
+   "currency": "EUR",
+   "posted_at": "2026-10-04",
+   "url": "https://mock-marketplace.example/listing/y3",
+   "images": [
+    {
+     "file": "y3.png",
+     "ocr_text": "MIRROR FORCE\nMRD-EN138",
+     "image_scores": {
+      "yugioh_card": 0.78
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Mirror Force",
+     "set_code": "MRD-EN138",
+     "set_name": "Metal Raiders"
+    }
+   }
+  },
+  {
+   "id": "y4",
+   "country": "RO",
+   "title": "Carte yugioh Pot of Greed",
+   "description": "Vând carte, stare foarte bună.",
+   "price": 8,
+   "currency": "EUR",
+   "posted_at": "2026-10-05",
+   "url": "https://mock-marketplace.example/listing/y4",
+   "images": [
+    {
+     "file": "y4.png",
+     "ocr_text": "P0t of Greed\nLOB-EN1l9",
+     "image_scores": {
+      "yugioh_card": 0.7
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Pot of Greed",
+     "set_code": "LOB-EN119",
+     "set_name": "Legend of Blue Eyes White Dragon"
+    }
+   }
+  },
+  {
+   "id": "y5",
+   "country": "EE",
+   "title": "Yu-Gi-Oh kaart Ash Blossom",
+   "description": "Müüa, väga heas korras. Secret rare.",
+   "price": 15,
+   "currency": "EUR",
+   "posted_at": "2026-10-06",
+   "url": "https://mock-marketplace.example/listing/y5",
+   "images": [
+    {
+     "file": "y5.png",
+     "ocr_text": "Ash Blossom & Joyous Spring\nMACR-EN036",
+     "image_scores": {
+      "yugioh_card": 0.81
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Ash Blossom & Joyous Spring",
+     "set_code": "MACR-EN036",
+     "set_name": "Maximum Crisis"
+    }
+   }
+  },
+  {
+   "id": "y6",
+   "country": "GR",
+   "title": "Κάρτα Exodia",
+   "description": "Αστραφτερή κάρτα, σαν καινούρια.",
+   "price": 60,
+   "currency": "EUR",
+   "posted_at": "2026-10-07",
+   "url": "https://mock-marketplace.example/listing/y6",
+   "images": [
+    {
+     "file": "y6.png",
+     "ocr_text": "EXODIA THE FORBIDDEN ONE\nLOB-EN124",
+     "image_scores": {
+      "yugioh_card": 0.7
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Exodia the Forbidden One",
+     "set_code": "LOB-EN124",
+     "set_name": "Legend of Blue Eyes White Dragon"
+    }
+   }
+  },
+  {
+   "id": "y7",
+   "country": "BG",
+   "title": "Колекция 50 карти Yu-Gi-Oh",
+   "description": "Различни карти, някои holo.",
+   "price": 40,
+   "currency": "EUR",
+   "posted_at": "2026-10-08",
+   "url": "https://mock-marketplace.example/listing/y7",
+   "images": [
+    {
+     "file": "y7.png",
+     "ocr_text": "",
+     "image_scores": {
+      "yugioh_card": 0.75
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "is_bundle": true,
+    "estimated_item_count": 50
+   }
+  },
+  {
+   "id": "y8",
+   "country": "RO",
+   "title": "Carte Yu-Gi-Oh Drago Bianco Occhi Blu",
+   "description": "Versiune italiană.",
+   "price": 30,
+   "currency": "EUR",
+   "posted_at": "2026-10-09",
+   "url": "https://mock-marketplace.example/listing/y8",
+   "images": [
+    {
+     "file": "y8.png",
+     "ocr_text": "Drago Bianco Occhi Blu\nSDK-I001",
+     "image_scores": {
+      "yugioh_card": 0.8
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "yugioh_card",
+    "identity": {
+     "card_name": "Blue-Eyes White Dragon",
+     "set_code": "SDK-I001",
+     "set_name": "Starter Deck: Kaiba",
+     "print_language": "it"
+    }
+   }
+  },
+  {
+   "id": "v1",
+   "country": "GR",
+   "title": "Pink Floyd - The Dark Side Of The Moon LP 1973",
+   "description": "Δίσκος βινυλίου, αγγλική έκδοση Harvest.",
+   "price": 45,
+   "currency": "EUR",
+   "posted_at": "2026-10-02",
+   "url": "https://mock-marketplace.example/listing/v1",
+   "images": [
+    {
+     "file": "v1.png",
+     "ocr_text": "THE DARK SIDE OF THE MOON\nHARVEST SHVL 804",
+     "image_scores": {
+      "vinyl": 0.9
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "vinyl",
+    "identity": {
+     "artist": "Pink Floyd",
+     "title": "The Dark Side Of The Moon",
+     "label": "Harvest",
+     "catalog_number": "SHVL 804",
+     "format": "LP",
+     "year": "1973"
+    }
+   }
+  },
+  {
+   "id": "v2",
+   "country": "HR",
+   "title": "Azra - Sunčana strana ulice 2LP",
+   "description": "Gramofonska ploča, Jugoton, očuvano.",
+   "price": 40,
+   "currency": "EUR",
+   "posted_at": "2026-10-03",
+   "url": "https://mock-marketplace.example/listing/v2",
+   "images": [
+    {
+     "file": "v2.png",
+     "ocr_text": "JUGOTON\nLSY 61523",
+     "image_scores": {
+      "vinyl": 0.85
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "vinyl",
+    "identity": {
+     "artist": "Azra",
+     "title": "Sunčana strana ulice",
+     "label": "Jugoton",
+     "format": "2LP"
+    }
+   }
+  },
+  {
+   "id": "v3",
+   "country": "BG",
+   "title": "ФСБ - Non Stop",
+   "description": "Грамофонна плоча, Балкантон, запазена.",
+   "price": 20,
+   "currency": "EUR",
+   "posted_at": "2026-10-04",
+   "url": "https://mock-marketplace.example/listing/v3",
+   "images": [
+    {
+     "file": "v3.png",
+     "ocr_text": "БАЛКАНТОН\nВТА 10522",
+     "image_scores": {
+      "vinyl": 0.84
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "vinyl",
+    "identity": {
+     "artist": "ФСБ",
+     "title": "Non Stop",
+     "label": "Balkanton"
+    }
+   }
+  },
+  {
+   "id": "v4",
+   "country": "RO",
+   "title": "Phoenix - Cantafabule disc vinil",
+   "description": "Disc de vinil Electrecord, stare bună.",
+   "price": 35,
+   "currency": "EUR",
+   "posted_at": "2026-10-05",
+   "url": "https://mock-marketplace.example/listing/v4",
+   "images": [
+    {
+     "file": "v4.png",
+     "ocr_text": "ELECTRECORD\nSTM-EDE 01294",
+     "image_scores": {
+      "vinyl": 0.86
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "vinyl",
+    "identity": {
+     "artist": "Phoenix",
+     "title": "Cantafabule",
+     "label": "Electrecord"
+    }
+   }
+  },
+  {
+   "id": "v5",
+   "country": "EE",
+   "title": "Vinüülplaat Apelsin 1982",
+   "description": "Melodiya, heas korras.",
+   "price": 12,
+   "currency": "EUR",
+   "posted_at": "2026-10-06",
+   "url": "https://mock-marketplace.example/listing/v5",
+   "images": [
+    {
+     "file": "v5.png",
+     "ocr_text": "МЕЛОДИЯ",
+     "image_scores": {
+      "vinyl": 0.8
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "vinyl",
+    "identity": {
+     "label": "Melodiya",
+     "year": "1982"
+    }
+   }
+  },
+  {
+   "id": "v6",
+   "country": "EE",
+   "title": "Collection of 30 vinyl records (rock, 70s)",
+   "description": "Job lot, various artists, mostly VG+.",
+   "price": 150,
+   "currency": "EUR",
+   "posted_at": "2026-10-07",
+   "url": "https://mock-marketplace.example/listing/v6",
+   "images": [
+    {
+     "file": "v6.png",
+     "ocr_text": "",
+     "image_scores": {
+      "vinyl": 0.85
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "vinyl",
+    "is_bundle": true,
+    "estimated_item_count": 30
+   }
+  },
+  {
+   "id": "b1",
+   "country": "GR",
+   "title": "Catan επιτραπέζιο παιχνίδι Kaissa",
+   "description": "Πλήρες, ελάχιστα παιγμένο.",
+   "price": 25,
+   "currency": "EUR",
+   "posted_at": "2026-10-02",
+   "url": "https://mock-marketplace.example/listing/b1",
+   "images": [
+    {
+     "file": "b1.png",
+     "ocr_text": "CATAN\nKAISSA",
+     "image_scores": {
+      "board_game": 0.88
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "board_game",
+    "identity": {
+     "title": "Catan",
+     "publisher": "Kaissa"
+    }
+   }
+  },
+  {
+   "id": "b2",
+   "country": "BG",
+   "title": "Настолна игра Каркасон",
+   "description": "Пълна, на български език.",
+   "price": 22,
+   "currency": "EUR",
+   "posted_at": "2026-10-03",
+   "url": "https://mock-marketplace.example/listing/b2",
+   "images": [
+    {
+     "file": "b2.png",
+     "ocr_text": "",
+     "image_scores": {
+      "board_game": 0.8
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "board_game",
+    "identity": {
+     "title": "Carcassonne"
+    }
+   }
+  },
+  {
+   "id": "b3",
+   "country": "HR",
+   "title": "Društvena igra Ticket to Ride Europe",
+   "description": "Days of Wonder, kompletna.",
+   "price": 30,
+   "currency": "EUR",
+   "posted_at": "2026-10-04",
+   "url": "https://mock-marketplace.example/listing/b3",
+   "images": [
+    {
+     "file": "b3.png",
+     "ocr_text": "TICKET TO RIDE\nEUROPE",
+     "image_scores": {
+      "board_game": 0.85
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "board_game",
+    "identity": {
+     "title": "Ticket to Ride",
+     "publisher": "Days of Wonder"
+    }
+   }
+  },
+  {
+   "id": "b4",
+   "country": "RO",
+   "title": "Joc de societate Dixit",
+   "description": "Libellud, ca nou.",
+   "price": 20,
+   "currency": "EUR",
+   "posted_at": "2026-10-05",
+   "url": "https://mock-marketplace.example/listing/b4",
+   "images": [
+    {
+     "file": "b4.png",
+     "ocr_text": "DIXIT",
+     "image_scores": {
+      "board_game": 0.83
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "board_game",
+    "identity": {
+     "title": "Dixit",
+     "publisher": "Libellud"
+    }
+   }
+  },
+  {
+   "id": "b5",
+   "country": "EE",
+   "title": "Lauamäng Azul",
+   "description": "Kõik osad olemas.",
+   "price": 18,
+   "currency": "EUR",
+   "posted_at": "2026-10-06",
+   "url": "https://mock-marketplace.example/listing/b5",
+   "images": [
+    {
+     "file": "b5.png",
+     "ocr_text": "AZUL",
+     "image_scores": {
+      "board_game": 0.8
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "board_game",
+    "identity": {
+     "title": "Azul"
+    }
+   }
+  },
+  {
+   "id": "e1",
+   "country": "GR",
+   "title": "Ακουστικά Sony WH-1000XM4 μαύρα",
+   "description": "Σε άριστη κατάσταση με θήκη.",
+   "price": 140,
+   "currency": "EUR",
+   "posted_at": "2026-10-02",
+   "url": "https://mock-marketplace.example/listing/e1",
+   "images": [
+    {
+     "file": "e1.png",
+     "ocr_text": "SONY",
+     "image_scores": {
+      "electronics": 0.9
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "electronics",
+    "identity": {
+     "brand": "Sony",
+     "model": "WH-1000XM4",
+     "product_type": "headphones"
+    }
+   }
+  },
+  {
+   "id": "e2",
+   "country": "BG",
+   "title": "iPhone 12 128GB син",
+   "description": "Телефон в отлично състояние.",
+   "price": 330,
+   "currency": "EUR",
+   "posted_at": "2026-10-03",
+   "url": "https://mock-marketplace.example/listing/e2",
+   "images": [
+    {
+     "file": "e2.png",
+     "ocr_text": "",
+     "image_scores": {
+      "electronics": 0.88
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "electronics",
+    "identity": {
+     "brand": "Apple",
+     "model": "iPhone 12",
+     "product_type": "phone"
+    }
+   }
+  },
+  {
+   "id": "e3",
+   "country": "HR",
+   "title": "PS4 Slim 1TB + 3 igre",
+   "description": "Konzola u odličnom stanju.",
+   "price": 200,
+   "currency": "EUR",
+   "posted_at": "2026-10-04",
+   "url": "https://mock-marketplace.example/listing/e3",
+   "images": [
+    {
+     "file": "e3.png",
+     "ocr_text": "PS4",
+     "image_scores": {
+      "electronics": 0.86
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "electronics",
+    "is_bundle": true,
+    "estimated_item_count": 3,
+    "identity": {
+     "brand": "Sony",
+     "model": "PS4 Slim",
+     "product_type": "console"
+    }
+   }
+  },
+  {
+   "id": "e4",
+   "country": "RO",
+   "title": "Boxă JBL Charge 5 albastră",
+   "description": "Bluetooth, baterie bună.",
+   "price": 90,
+   "currency": "EUR",
+   "posted_at": "2026-10-05",
+   "url": "https://mock-marketplace.example/listing/e4",
+   "images": [
+    {
+     "file": "e4.png",
+     "ocr_text": "JBL",
+     "image_scores": {
+      "electronics": 0.87
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "electronics",
+    "identity": {
+     "brand": "JBL",
+     "model": "Charge 5",
+     "product_type": "speaker"
+    }
+   }
+  },
+  {
+   "id": "e5",
+   "country": "EE",
+   "title": "Plaadimängija Technics SL-1200MK2",
+   "description": "Töökorras, kaas olemas.",
+   "price": 550,
+   "currency": "EUR",
+   "posted_at": "2026-10-06",
+   "url": "https://mock-marketplace.example/listing/e5",
+   "images": [
+    {
+     "file": "e5.png",
+     "ocr_text": "Technics",
+     "image_scores": {
+      "electronics": 0.8,
+      "vinyl": 0.4
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "electronics",
+    "identity": {
+     "brand": "Technics",
+     "model": "SL-1200MK2",
+     "product_type": "turntable"
+    }
+   }
+  },
+  {
+   "id": "e6",
+   "country": "EE",
+   "title": "Nintendo Switch OLED white",
+   "description": "Console with dock, barely used.",
+   "price": 230,
+   "currency": "EUR",
+   "posted_at": "2026-10-07",
+   "url": "https://mock-marketplace.example/listing/e6",
+   "images": [
+    {
+     "file": "e6.png",
+     "ocr_text": "",
+     "image_scores": {
+      "electronics": 0.85
+     }
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "electronics",
+    "identity": {
+     "brand": "Nintendo",
+     "product_type": "console"
+    }
+   }
+  },
+  {
+   "id": "u1",
+   "country": "GR",
+   "title": "Ποδήλατο βουνού 26 ιντσών",
+   "description": "Σε καλή κατάσταση, νέα λάστιχα.",
+   "price": 120,
+   "currency": "EUR",
+   "posted_at": "2026-10-02",
+   "url": "https://mock-marketplace.example/listing/u1",
+   "images": [
+    {
+     "file": "u1.png",
+     "ocr_text": "",
+     "image_scores": {}
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "unknown"
+   }
+  },
+  {
+   "id": "u2",
+   "country": "HR",
+   "title": "Kauč na razvlačenje",
+   "description": "Siva boja, malo korišten.",
+   "price": 150,
+   "currency": "EUR",
+   "posted_at": "2026-10-03",
+   "url": "https://mock-marketplace.example/listing/u2",
+   "images": [
+    {
+     "file": "u2.png",
+     "ocr_text": "",
+     "image_scores": {}
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "unknown"
+   }
+  },
+  {
+   "id": "u3",
+   "country": "RO",
+   "title": "Ceas de mână vintage",
+   "description": "Funcționează perfect.",
+   "price": 60,
+   "currency": "EUR",
+   "posted_at": "2026-10-04",
+   "url": "https://mock-marketplace.example/listing/u3",
+   "images": [
+    {
+     "file": "u3.png",
+     "ocr_text": "",
+     "image_scores": {}
+    }
+   ],
+   "attributes": {},
+   "expected": {
+    "category": "unknown"
+   }
+  }
+ ]
+}

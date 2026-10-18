@@ -1,0 +1,9 @@
+{
+  "any": ["catan", "carcassonne", "ticket to ride", "monopoly", "dixit", "azul", "pandemic", "risk", "scrabble", "codenames", "7 wonders", "splendor", "kosmos", "hasbro", "asmodee", "days of wonder", "kaissa", "z-man", "hans im glück", "boardgame", "bgg"],
+  "en": ["board game", "boardgame", "tabletop game", "game box", "expansion", "meeples", "game board"],
+  "el": ["επιτραπέζιο", "επιτραπέζιο παιχνίδι", "επιτραπεζιο", "επιτραπέζια", "παιχνίδι κουτί"],
+  "bg": ["настолна игра", "настолни игри", "бордова игра", "игра на дъска"],
+  "hr": ["društvena igra", "drustvena igra", "društvene igre", "igra na ploči"],
+  "ro": ["joc de societate", "jocuri de societate", "board game", "joc de masă"],
+  "et": ["lauamäng", "lauamängud", "lauamängu"]
+}
